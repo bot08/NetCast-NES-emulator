@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JSNES: A JavaScript NES emulator</title>
+</head>
+<style>
+    body{
+        max-width: 335px;   /* window size */
+        margin: 2rem auto;
+        background-color: #fff;
+        /* padding: 2rem 3rem; */
+        font: 16px/1.3rem normal Verdana, sans-serif;
+    }
+    #wrapper{
+        overflow: auto;
+    }
+    #controls, #mainwindow{
+        float:left;
+    }
+    #mainwindow{
+        margin-right: 3rem;
+    }
+    .nes-screen, .nes-roms, .nes-controls{
+        padding-bottom: .5rem;
+    }
+    .nes-status{
+        padding: .5rem 0;
+        font-weight: 700;
+        font-size: .6rem;
+        text-align: center;
+        border-radius: .5rem;
+        background-color: #efefef;
+        max-width: 100%;
+    }
+    table, td, th{
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+    td, th{
+        padding: .2rem .7rem;
+    }
+    </style>
+<body>
+
+<center>
+    <div id="wrapper">
+        <center>
+            <div id="mainwindow">
+                <h2>NES emulator</h2>
+                <div id="emulator"></div>
+            </div>
+        </center>
+    </div>
+</center>
+
+<script src="jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="nes.js" type="text/javascript" charset="utf-8"></script>
+<script src="utils.js" type="text/javascript" charset="utf-8"></script>
+<script src="cpu.js" type="text/javascript" charset="utf-8"></script>
+<script src="keyboard.js" type="text/javascript" charset="utf-8"></script>
+<script src="mappers.js" type="text/javascript" charset="utf-8"></script>
+<script src="TVkeycode.js" type="text/javascript" charset="utf-8"></script>
+<script src="TVkeynavigation.js" type="text/javascript" charset="utf-8"></script>
+<script src="papu.js" type="text/javascript" charset="utf-8"></script>
+<script src="ppu.js" type="text/javascript" charset="utf-8"></script>
+<script src="rom.js" type="text/javascript" charset="utf-8"></script>
+<script src="ui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+        var nes;
+        $(function() {
+            nes = new JSNES({
+                'ui': $('#emulator').JSNESUI({
+                    "Homebrew": [
+                        ['LJ65', 'rom.nes'],
+                    ]
+                })
+            });
+        });
+    </script>
+    </body>
+</html>
