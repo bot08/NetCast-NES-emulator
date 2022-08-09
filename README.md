@@ -1,3 +1,3 @@
-# NetCast OS app (currently didn't work)
+# NES emulator for NetCast (currently didn't work)
 
 [About OS](https://webostv.developer.lge.com/discover/archive/netcast/)
